@@ -1,0 +1,16 @@
+struct fenwick
+{
+    ll T[maxn + 5]{0};
+    void update(int i, ll x)
+    {
+        for(i; i >= 0; i = (i & (i + 1)) - 1)
+            T[i] += x;
+    }
+    ll query(int i)
+    {
+        ll ans = 0;
+        for(i; i < maxn; i = i | (i + 1))
+            ans += T[i];
+        return ans;
+    }
+};
