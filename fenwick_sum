@@ -9,7 +9,7 @@ struct fenwick
             ans += T[i];
         return ans;
     }
-    void update(int i, ll x)
+    void update(int i, int x)
     {
         int v = i;
         for(i; i < maxn2; i = i | (i + 1))
